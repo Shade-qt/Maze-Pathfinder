@@ -2,12 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pathfinding Visualizer</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Pathfinding Visualizer</h1>
-    <div id="grid-container"></div>
+    <header>
+        <h1>Pathfinding Visualizer</h1>
+        <p class="subtitle">Click and drag on the grid to draw walls, then watch BFS find the shortest path.</p>
+    </header>
+
+    <div id="controls">
+        <div class="buttons">
+            <button id="start-bfs" class="btn btn-primary">Visualize BFS</button>
+            <button id="clear-grid" class="btn">Clear Grid</button>
+        </div>
+
+        <div class="speed-control">
+            <span class="speed-title">Speed</span>
+            <span class="speed-label">Slowest</span>
+            <input type="range" id="speed" min="1" max="20" value="8">
+            <span class="speed-label">Fastest</span>
+        </div>
+    </div>
+
+    <div class="legend">
+        <span><i class="swatch swatch-start"></i>Start</span>
+        <span><i class="swatch swatch-end"></i>End</span>
+        <span><i class="swatch swatch-wall"></i>Wall</span>
+        <span><i class="swatch swatch-visited"></i>Visited</span>
+        <span><i class="swatch swatch-path"></i>Shortest path</span>
+    </div>
+
+    <div class="grid-wrap">
+        <div id="grid-container"></div>
+    </div>
+
+    <script src="algorithms/bfs.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
